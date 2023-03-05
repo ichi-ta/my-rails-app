@@ -1,24 +1,6 @@
-# README
+#Ruby on Railsでアプリケーションを作ろう
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+完成しきらないかもしれないですが挑戦をします。
+ローカルの環境構築では痛い目をみたので、[参考](https://qiita.com/daichi41/items/dfea6195cbb7b24f3419)にしてWLS2+Dockerでの環境構築に挑戦しました。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Volume関連でエラーが出て解決方法がわからなかったのでvolumeはしていません。
