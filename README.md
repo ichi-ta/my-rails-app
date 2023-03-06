@@ -16,3 +16,10 @@ docker-compose run web bundle exec rake db:migration
 docker-compose run web bundle exec [railsコマンド]
 ```
 で実行できた。
+## 目指したアプリケーション
+私は複数人の介助者を利用して生活している。介助者がいつ、何時間来るを把握しやすくし、ダブルブッキングや支援時間数がオーバーすることを防ぐ目的で作成した。
+*支援時間数とは、支援を受けられる時間数でオーバーするとオーバーした分は自費で負担する。
+
+## カレンダー機能
+[参考](https://zenn.dev/yuma_rails/articles/00b6ea10b87ca5#simplecalendar%E3%81%AEcss%E3%82%92%E8%BF%BD%E5%8A%A0)を見て、カレンダーで予定を確認できるようにした。
+一覧でも表示されるため、わかりやすい。
