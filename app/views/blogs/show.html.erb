@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="show">
+<p>
+  <strong>事業所名</strong>
+  <%= @blog.office_name %>
+</p>
+
+<p>
+  <strong>支援区分</strong>
+  <%= @blog.division %>
+</p>
+
+<p>
+  <strong>日時</strong>
+  <%= @blog.start_time.strftime("%m-%d-%-H:%M") %>
+</p>
+
+<%= link_to 'edit', edit_blog_path(@blog) %>
+<%= link_to 'delete', blog_path(@blog.id), method: :dalete, data: { confirm: 'Sure?' } %>
+<%= link_to 'back', blogs_path%>
+</div>
