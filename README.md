@@ -8,8 +8,8 @@ docker-compose up
 ```
 毎に
 ```console
-docker-compose run web bundle exec rake db:create
-docker-compose run web bundle exec rake db:migration
+docker-compose run web bundle exec rails db:create
+docker-compose run web bundle exec rails db:migration
 ```
 を実行した。ちなみに、railsコマンドは
 ```
