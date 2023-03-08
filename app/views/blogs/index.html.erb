@@ -19,7 +19,6 @@
   <tbody>
     <%= @blogs.each do |blog| %>
       <tr>
-        <td><%= link_to blog.office_name, blog %></td>
         <td><%= blog.start_time.strftime("%m-%d-%-H:%M") %></td>
         <td><%= blog.division %></td>
       </tr>
@@ -27,10 +26,6 @@
   </tbody>
 </table>
 <%= form_with(model: @blog, local: true) do |form| %>
-  <div class="office_name">
-    <div class="form-tag">事業所名</div>
-    <%= form.text_field :office_name %>
-  </div>
 
   <div class="division">
     <div class="form-tag">支援区分</div>

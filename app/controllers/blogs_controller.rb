@@ -41,6 +41,6 @@ class BlogsController < ApplicationController
   private
 
   def blog_parameter
-    params.require(:blog).permit(:office_name, :division, :start_time)
+    params.require(:blog).permit(:division, :start_time)
   end
 end
