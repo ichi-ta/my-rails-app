@@ -12,10 +12,12 @@ class BlogsController < ApplicationController
 
   def show
     @blog =Blog.find(params[:id])
+    @office = Office.find_by(id: @blog.office_id)
   end
 
   def create
-    Blog.create(blog_parameter)
+    @blog = Blog.create(blog_parameter)
+    @office = Office.find_by(id: @blog.office_id)
     redirect_to blogs_path
   end
 
@@ -41,6 +43,6 @@ class BlogsController < ApplicationController
   private
 
   def blog_parameter
-    params.require(:blog).permit(:office_name, :division, :start_time)
+    params.require(:blog).permit(:start_time, :division, :time, :office_id)
   end
 end
