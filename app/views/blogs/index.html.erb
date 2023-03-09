@@ -2,39 +2,55 @@
 
 <div class="toppage">
 <h1 class="top">ヘルパー予定表</h1>
-<br>
+<h3><%= link_to "事業所一覧", offices_url %></h3>
+<h3><%= link_to "事業所の追加", 'offices/new' %></h3>
 
+<br>
 <div class="row">
 <div class="col-md-4">
   <div class="schedule">次の支援一覧</div>
+
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th>事業所</th>
+      <th>事業所名</th>
       <th>日時</th>
       <th>支援区分</th>
+      <th>支援時間</th>
     </tr>
   </thead>
-
+<br>
   <tbody>
     <%= @blogs.each do |blog| %>
       <tr>
+        <td><%= link_to blog.office.name, office_url(blog.office.id) %></td>
         <td><%= blog.start_time.strftime("%m-%d-%-H:%M") %></td>
         <td><%= blog.division %></td>
+        <td><%= blog.time %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 <%= form_with(model: @blog, local: true) do |form| %>
 
+  <div class="office">
+    <div class="form-tag">事業所名</div>
+    <%= form.select :office_id, options_from_collection_for_select(Office.all, :id, :name) %>
+  </div>
   <div class="division">
     <div class="form-tag">支援区分</div>
     <%= form.text_field :division %>
   </div>
 
-  <div class="time">
-    <div class="form-tag">時間</div>
+  <div class="datetime">
+    <div class="form-tag">日時</div>
     <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="datetime">
+    <div class="form-tag">支援時間</div>
+    <%= form.number_field :time, in: 0.5..20.0, step: 0.5 %>
   </div>
 
   <div class="submit"><%= form.submit %></div>
@@ -47,7 +63,7 @@
 <%= month_calendar events: @blogs do |date, blogs| %>
   <%= date.day %>
   <%= blogs.each do |blog| %>
-    <div><%= link_to blog.office_name, blog %></div>
+    <div><%= link_to blog.division, blog %></div>
   <% end %>
 <% end %>
 </div>
