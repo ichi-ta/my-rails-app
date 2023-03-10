@@ -1,4 +1,4 @@
-# Ruby on Railsでアプリケーションを自作する
+# Ruby on Railsで介助者が入る予定をわかりやすく見れるアプリケーションを作る。
 
 ローカルの環境構築では痛い目をみたので、[参考](https://qiita.com/daichi41/items/dfea6195cbb7b24f3419)にしてWLS2+Dockerでの環境構築に挑戦した。
 
@@ -23,3 +23,6 @@ docker-compose run web bundle exec [railsコマンド]
 ## カレンダー機能
 [参考](https://zenn.dev/yuma_rails/articles/00b6ea10b87ca5#simplecalendar%E3%81%AEcss%E3%82%92%E8%BF%BD%E5%8A%A0)を見て、カレンダーで予定を確認できるようにした。
 一覧でも表示されるため、わかりやすい。
+
+## 事業所ごとに支援が見れる機能
+[Ruby on Railsチュートリアル](https://railstutorial.jp/chapters/sign_up?version=5.1)を参考にSNSの「アカウント」と「投稿」のように、「事業所」と「支援」を紐づけて実装した。
