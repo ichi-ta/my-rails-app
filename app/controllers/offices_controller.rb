@@ -10,7 +10,7 @@ class OfficesController < ApplicationController
     @blogs = @office.blogs.paginate(page: params[:page])
   end
 
-  #事業所の登録
+  #事業所の登録ページ
   def new
     @office = Office.new
   end
@@ -20,6 +20,7 @@ class OfficesController < ApplicationController
     redirect_to blogs_path
   end
 
+  #事業所の削除ページ
   def destroy
     Office.find(params[:id]).destroy
     flash[:success] = "削除されました"

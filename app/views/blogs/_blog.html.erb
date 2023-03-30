@@ -4,7 +4,8 @@
         <td><%= blog.start_time.strftime("%m-%d-%-H:%M") %></td>
         <td><%= blog.division %></td>
         <td><%= blog.time %></td>
-        <td><%= link_to "詳細", blog %></td>
+        <td><%= link_to '編集', edit_blog_path(blog) %></td>
+        <td><%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
   </tbody>
 </table>

@@ -1,5 +1,10 @@
 <%= form_with(model: @blog, local: true) do |form| %>
 
+  <div class="office">
+    <div class="form-tag">事業所</div>
+    <%= form.select :office_id, options_from_collection_for_select(Office.all, :id, :name) %>
+  </div>
+  
   <div class="division">
     <div class="form-tag">支援区分</div>
     <%= form.text_field :division %>
