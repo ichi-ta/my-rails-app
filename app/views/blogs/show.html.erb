@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="show">
+<%= render 'layouts/header' %>
+<p>
+  <strong>事業所</strong>
+  <%= @office.name %>
+</p>
 <p>
   <strong>支援区分</strong>
   <%= @blog.division %>
@@ -7,10 +12,16 @@
 
 <p>
   <strong>日時</strong>
-  <%= @blog.start_time.strftime("%m-%d-%-H:%M") %>
+  <%= @blog.start_time.strftime("%m月%d日 %H:%Mから") %>
 </p>
 
-<%= link_to 'edit', edit_blog_path(@blog) %>
-<%= link_to 'delete', blog_path(@blog.id), method: :delete, data: { confirm: 'Sure?' } %>
-<%= link_to 'back', blogs_path%>
+<%= link_to edit_blog_path(@blog), class: "operator" do %>
+  <button>編集</button>
+<% end %>
+<%= link_to blog_path(@blog.id), method: :delete, data: { confirm: 'Sure?' }, class: "operator" do %>
+  <button>削除</button>
+<% end %>
+<%= link_to blogs_path, class: "operator" do %>
+  <button>戻る</button>
+<% end %>
 </div>

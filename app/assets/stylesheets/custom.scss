@@ -1,4 +1,20 @@
 /* header */
+.Header {
+  position:fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(197, 197, 197);
+  align-items: center;
+  position: sticky;
+}
+
+.menu {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+}
+
 #logo {
   float: left;
   font-size: 1.7em;
@@ -16,47 +32,62 @@
   text-decoration: none;
 }
 
-header {
-  position:fixed;
-  width: 100%;
-  height: 80px;
-  background-color: rgb(197, 197, 197);
-  align-items: center;
-  position: fixed;
-}
-
-.menu {
-  list-style: none;
-  display: inline-block;
-  padding: 10px;
-}
-
 /* index */
-.form {
-  width: 25%;
-  }
-  .form select, input {
-    border-radius: 0.6em;   /* 角丸 */
-    margin-bottom: 10pt;
-  }
+.blog-form select, .blog-form input {
+  border-radius: 0.6em;   /* 角丸 */
+  margin-bottom: 10pt;
+  margin-top: 0;
+}
 
 .schedule {
-  width: 35%;
-  margin-left: 30px;
-  }
+  margin-left: 60px;
+}
 
-.calendar {
+.calender {
   width: 70%;
-  }
+}
 
 .index {
   display: flex;
   flex-wrap: wrap;
-  padding: 100px 0px;
-  height: 500px;
+  padding: 20px 0px;
+  height: 400px;
   }
 
-/* new */
+/* show */
+.operator button{
+  border-radius: 0.6em;   /* 角丸 */
+  margin-bottom: 10pt;
+}
 
 
+/* pagination */
+.pagination li {
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
 
+.pagination a {
+  color: #337ab7;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+}
+
+.pagination .active a,
+.pagination .active a:hover,
+.pagination .active a:focus {
+  background-color: #337ab7;
+  color: #fff;
+  border-color: #337ab7;
+}
+
+.pagination .disabled a,
+.pagination .disabled a:hover,
+.pagination .disabled a:focus {
+  color: #ccc;
+  background-color: #fff;
+  border-color: #ddd;
+}

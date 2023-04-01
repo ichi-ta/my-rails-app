@@ -1,8 +1,5 @@
 <% provide(:title, '事業所一覧') %>
-<div>
-<%= link_to 'back', blogs_path%>
-</div>
-
+<%= render 'layouts/header' %>
 <h1>事業所の一覧</h1>
 <ul class="offices">
   <% @offices.each do |office| %>
@@ -11,4 +8,9 @@
     </li>
   <% end %>
 </ul>
+<div>
+<%= link_to blogs_path, class: 'operator' do %>
+  <button>戻る</button>
+<% end %>
+</div>
 

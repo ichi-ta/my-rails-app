@@ -41,30 +41,31 @@
           </tr>
         </thead>
         <tbody>
-          <%= @blogs.each do |blog| %>
+          <%= @all_blogs.each do |blog| %>
             <tr>
               <td align="center"><%= link_to blog.office.name, office_url(blog.office.id) %></td>
-              <td align="center"><%= blog.start_time.strftime("%m-%d-%-H:%M") %></td>
+              <td align="center"><%= blog.start_time.strftime("%m/%d %H:%M~") %></td>
               <td align="center"><%= blog.division %></td>
               <td align="center"><%= blog.time %></td>
-              <td><%= link_to '編集', edit_blog_path(blog) %></td>
+              <td><%= link_to '詳細', blog %></td>
               <td><%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+      <%= will_paginate @all_blogs, :previous_label => ' &lt 前へ', :next_label => '次へ &gt', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
+  </div>
     <div class="calendar">
       <%= month_calendar events: @blogs do |date, blogs| %>
         <%= date.day %>
         <%= blogs.each do |blog| %>
           <div>
             <%= link_to blog.office.name, office_url(blog.office.id) %>
-            <%= link_to blog.division, blog %>
+            <%= blog.division %>
             <%= blog.time %>時間
           </div>
         <% end %>
       <% end %>
     </div>
-  </div>
 </div>

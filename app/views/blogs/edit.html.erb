@@ -1,5 +1,6 @@
+<%= render 'layouts/header' %>
+<div class="blog-form">
 <%= form_with(model: @blog, local: true) do |form| %>
-
   <div class="office">
     <div class="form-tag">事業所</div>
     <%= form.select :office_id, options_from_collection_for_select(Office.all, :id, :name) %>
@@ -18,4 +19,9 @@
   <div class="submit">
     <%= form.submit %>
   </div>
+  <%= link_to @blog, class: 'operator' do %>
+    <button>戻る</button>
+  <% end %>
+  
 <% end %>
+</div>

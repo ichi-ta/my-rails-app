@@ -7,7 +7,7 @@ class OfficesController < ApplicationController
   #事業所の詳細ページ
   def show
     @office = Office.find(params[:id])
-    @blogs = @office.blogs.paginate(page: params[:page])
+    @all_blogs = @office.blogs.paginate(page: params[:page])
   end
 
   #事業所の登録ページ

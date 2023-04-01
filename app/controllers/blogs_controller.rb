@@ -3,6 +3,7 @@ class BlogsController < ApplicationController
   #すべてのデータを取得しblogs変数に格納
   def index
     @blogs = Blog.all
+    @all_blogs = @blogs.paginate(page: params[:page], per_page: 5)
     @blog = Blog.new
   end
 
