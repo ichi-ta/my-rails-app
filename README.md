@@ -1,6 +1,7 @@
 # Ruby on Railsで介助者が入る予定をわかりやすく見れるアプリケーションを作る。
 
-ローカルの環境構築では痛い目をみたので、[参考](https://qiita.com/daichi41/items/dfea6195cbb7b24f3419)にしてWLS2+Dockerでの環境構築に挑戦した。
+ローカルの環境構築で失敗したことがあるので、[参考](https://qiita.com/daichi41/items/dfea6195cbb7b24f3419)にしてWLS2+Dockerでの環境構築に挑戦した。
+授業ではDockerを触っていたので理解しながら進めることができた。
 
 Volume関連でエラーが出て解決方法がわからなかったので、volumeはしていない。なので、
 ```console
